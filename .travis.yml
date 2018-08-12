@@ -1,0 +1,16 @@
+cache: bundler
+
+jobs:
+  include:
+    - stage: lint
+      language: node_js
+      node_js:
+        - "node"
+      script: npm run eslint
+    - stage: test
+      language: node_js
+      node_js:
+        - "node"
+      script:
+        - "npm run test"
+        - "npm run ci:sendCoverage"
