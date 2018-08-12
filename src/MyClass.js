@@ -3,6 +3,10 @@
  * @desc A class description
  */
 module.exports = class MyClass {
+  constructor() {
+    this.count = 0;
+  }
+
   /**
    * @access public
    * @desc A method description
@@ -13,8 +17,8 @@ module.exports = class MyClass {
    * @param {number} b - this is a value.
    * @return {number} result of the sum value.
    */
-  sum(a, b){
+  sum(a, b) {
+    this.count += 1;
     return a + b;
   }
-}
-
+};
