@@ -15,6 +15,9 @@ jobs:
         - "npm run test"
         - "npm run ci:sendCoverage"
     - stage: deploy github release
+      language: node_js
+      node_js:
+        - "node"
       deploy:
         provider: releases
         api_key:
