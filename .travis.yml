@@ -16,7 +16,7 @@ jobs:
         - "npm run ci:sendCoverage"
     - stage: deploy
       #General Setup
-      if: tag = true
+      if: tag IS present
       language: node_js
       node_js:
         - "node"
