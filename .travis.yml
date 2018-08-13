@@ -1,0 +1,28 @@
+cache: bundler
+
+jobs:
+  include:
+    - stage: lint
+      language: node_js
+      node_js:
+        - "node"
+      script: npm run eslint
+    - stage: test
+      language: node_js
+      node_js:
+        - "node"
+      script:
+        - "npm run test"
+        - "npm run ci:sendCoverage"
+    - stage: deploy github release
+      language: node_js
+      node_js:
+        - "node"
+      deploy:
+        provider: releases
+        api_key:
+          secure: $GITHUB_TOKEN
+        file: "README.md"
+        skip_cleanup: true
+        on:
+          tags: true
