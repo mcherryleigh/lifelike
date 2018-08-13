@@ -34,7 +34,5 @@ jobs:
           secure: $GITHUB_TOKEN
         file: "CHANGELOG.md"
         skip_cleanup: true
-        on:
-          tags: true
       #NPM publish
       #Github Pages
