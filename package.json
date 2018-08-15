@@ -2,6 +2,7 @@
   "name": "lifelike",
   "version": "0.0.0",
   "scripts": {
+    "changelog": "semantic-release",
     "ci:sendCoverage": "nyc report --reporter=text-lcov | coveralls",
     "esdoc": "esdoc",
     "eslint": "eslint src/*.js test/*.js",
@@ -9,6 +10,7 @@
     "test:watch": "npm test -- --watch"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
     "ava": "0.25.0",
     "coveralls": "3.0.2",
     "esdoc": "1.1.0",
@@ -18,7 +20,16 @@
     "eslint": "5.3.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
-    "nyc": "12.0.2"
+    "nyc": "12.0.2",
+    "semantic-release": "^15.9.8"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "release": {
+    "prepare": [
+      {
+        "path": "@semantic-release/changelog",
+        "changelogFile": "CHANGELOG.md"
+      }
+    ]
+  }
 }

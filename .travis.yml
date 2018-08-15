@@ -14,15 +14,25 @@ jobs:
       script:
         - "npm run test"
         - "npm run ci:sendCoverage"
-    - stage: deploy github release
+    - stage: deploy
+      #General Setup
+      if: tag IS present
       language: node_js
       node_js:
         - "node"
+      #Create Changelog
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - nvm install node
+          - npx semantic-release
+      #Github Releases
       deploy:
         provider: releases
         api_key:
           secure: $GITHUB_TOKEN
-        file: "README.md"
+        file: "CHANGELOG.md"
         skip_cleanup: true
-        on:
-          tags: true
+      #NPM publish
+      #Github Pages
