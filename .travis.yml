@@ -16,7 +16,7 @@ jobs:
         - "npm run ci:sendCoverage"
     - stage: deploy
       #General Setup
-      if: tag IS present
+      if: env(PUBLISH) IS true
       language: node_js
       node_js:
         - "node"
@@ -27,6 +27,7 @@ jobs:
         script:
           - nvm install node
           - npx semantic-release
+          - ls -alh
       #Github Releases
       deploy:
         provider: releases
