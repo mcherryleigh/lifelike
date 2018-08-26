@@ -16,7 +16,7 @@ jobs:
         - "npm run ci:sendCoverage"
     - stage: deploy
       #General Setup
-      if: env(PUBLISH) IS true
+      if: env(PUBLISH) = true
       language: node_js
       node_js:
         - "node"
