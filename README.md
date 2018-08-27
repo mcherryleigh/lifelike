@@ -5,3 +5,4 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/mcherryleigh/lifelike?branch=master)](https://bettercodehub.com/)
 [![InchCI](https://inch-ci.org/github/mcherryleigh/lifelike.svg?branch=master)](https://inch-ci.org/github/mcherryleigh/lifelike?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/mcherryleigh/lifelike.svg)](https://greenkeeper.io/)
+[![Join the chat at https://gitter.im/lifelikejs](https://badges.gitter.im/lifelikejs/Questions-And-Issues.svg)](https://gitter.im/lifelikejs/Questions-And-Issues)
