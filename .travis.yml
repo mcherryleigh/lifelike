@@ -1,4 +1,8 @@
 cache: bundler
+# Defaults for stages
+language: node_js
+node_js:
+  - "node"
 
 before_install:
 # package-lock.json was introduced in npm@5
@@ -10,24 +14,19 @@ after_script: greenkeeper-lockfile-upload
 
 jobs:
   include:
-    - stage: lint
-      language: node_js
+    - stage: "lint-and-test"
       node_js:
         - "node"
-      script: npm run eslint
-    - stage: test
-      language: node_js
-      node_js:
-        - "node"
+        - "10"
+        - "9"
+        - "8"
       script:
         - "npm run test"
         - "npm run ci:sendCoverage"
+        - "npm run eslint"
     - stage: deploy
       #General Setup
       if: env(PUBLISH) = true
-      language: node_js
-      node_js:
-        - "node"
       #Create Changelog
       deploy:
         provider: script
