@@ -24,7 +24,7 @@
   "homepage": "https://mcherryleigh.github.io/lifelike/",
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
-    "ava": "0.25.0",
+    "ava": "1.0.1",
     "coveralls": "3.0.2",
     "esdoc": "1.1.0",
     "esdoc-lint-plugin": "1.0.2",
